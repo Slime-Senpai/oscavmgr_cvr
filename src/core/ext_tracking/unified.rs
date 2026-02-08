@@ -385,6 +385,16 @@ impl UnifiedTrackingData {
             self.getu(UnifiedExpressions::TongueUp) - self.getu(UnifiedExpressions::TongueDown),
         );
 
+        self.setc(
+            CombinedExpression::TongueArchY,
+            self.getu(UnifiedExpressions::TongueBendDown) - self.getu(UnifiedExpressions::TongueCurlUp),
+        );
+
+        self.setc(
+            CombinedExpression::TongueShape,
+            self.getu(UnifiedExpressions::TongueSquish) - self.getu(UnifiedExpressions::TongueFlat),
+        );
+
         let allow_blush = !matches!(state.params.get("AllowBlush"), Some(OscType::Bool(false)));
 
         // Custom stuff
@@ -477,6 +487,8 @@ pub const NUM_SHAPES: usize = UnifiedExpressions::COUNT + CombinedExpression::CO
 pub enum UnifiedExpressions {
     EyeLeftX,
     EyeRightX,
+    EyeLeftY,
+    EyeRightY,
     EyeY,
 
     // 'Biometrically' accurate data that is included with UnifiedEye
@@ -657,6 +669,9 @@ pub enum CombinedExpression {
     CheekSquint,
     TongueX,
     TongueY,
+    // NEW
+    TongueArchY,
+    TongueShape,
 
     // Non-standard
     EarLeft,

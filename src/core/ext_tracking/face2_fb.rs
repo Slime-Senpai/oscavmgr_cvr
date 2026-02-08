@@ -105,8 +105,12 @@ pub(crate) fn face2_fb_to_unified(face_fb: &[f32]) -> Option<UnifiedShapes> {
         getf(FaceFb::EyesLookRightL) - getf(FaceFb::EyesLookLeftL),
     );
     shapes.setu(
-        UnifiedExpressions::EyeY,
+        UnifiedExpressions::EyeRightY,
         getf(FaceFb::EyesLookUpR) - getf(FaceFb::EyesLookDownR),
+    );
+    shapes.setu(
+        UnifiedExpressions::EyeLeftY,
+        getf(FaceFb::EyesLookUpL) - getf(FaceFb::EyesLookDownL),
     );
 
     shapes.setu(UnifiedExpressions::EyeClosedLeft, getf(FaceFb::EyesClosedL));

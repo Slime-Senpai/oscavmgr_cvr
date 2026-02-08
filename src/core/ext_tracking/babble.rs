@@ -251,7 +251,8 @@ static ADDR_TO_UNIFIED: Lazy<HashMap<&'static str, Vec<UnifiedExpressions>>> = L
 
         ("/avatar/parameters/v2/EyeLeftX", vec![UnifiedExpressions::EyeLeftX]),
         ("/avatar/parameters/v2/EyeRightX", vec![UnifiedExpressions::EyeRightX]),
-        ("/avatar/parameters/v2/EyeLeftY", vec![UnifiedExpressions::EyeY]),
+        ("/avatar/parameters/v2/EyeLeftY", vec![UnifiedExpressions::EyeLeftY]),
+        ("/avatar/parameters/v2/EyeRightY", vec![UnifiedExpressions::EyeRightY]),
         ("/avatar/parameters/v2/EyeLidLeft", vec![UnifiedExpressions::EyeClosedLeft]),
         ("/avatar/parameters/v2/EyeLidRight", vec![UnifiedExpressions::EyeClosedRight]),
     ]

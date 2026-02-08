@@ -33,13 +33,12 @@ pub(crate) fn htc_to_unified(d: &HtcFacialData) -> UnifiedShapes {
         UnifiedExpressions::EyeLeftX,
         d.eyef(xr::EyeExpressionHTC::LEFT_IN) - d.eyef(xr::EyeExpressionHTC::LEFT_OUT),
     );
-    shapes.setu(
-        UnifiedExpressions::EyeY,
-        (d.eyef(xr::EyeExpressionHTC::LEFT_UP) + d.eyef(xr::EyeExpressionHTC::RIGHT_UP)
-            - d.eyef(xr::EyeExpressionHTC::LEFT_DOWN)
-            - d.eyef(xr::EyeExpressionHTC::RIGHT_DOWN))
-            / 2.0,
-    );
+
+    shapes.setu(UnifiedExpressions::EyeRightY,
+                d.eyef(xr::EyeExpressionHTC::LEFT_UP) - d.eyef(xr::EyeExpressionHTC::LEFT_DOWN));
+
+    shapes.setu(UnifiedExpressions::EyeLeftY,
+                d.eyef(xr::EyeExpressionHTC::RIGHT_UP) - d.eyef(xr::EyeExpressionHTC::RIGHT_DOWN));
 
     shapes.setu(
         UnifiedExpressions::EyeClosedLeft,

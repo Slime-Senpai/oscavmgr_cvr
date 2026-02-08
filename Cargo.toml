@@ -1,6 +1,6 @@
 [package]
-name = "oscavmgr"
-version = "25.2.0"
+name = "oscavmgr_cvr"
+version = "26.0.0"
 edition = "2021"
 
 [dependencies]
